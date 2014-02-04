@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <head>
 <title>Regular Expressions</title>
 
@@ -13,9 +13,57 @@
   var response2 = /string/.test(someString);
   document.writeIn(response2);
 
+//To get an email address
+  var email = someEmail.match(/\b[\w-]+@[\wr-]+\.[A-Za-z_-{2,4}\b/);
 
-
-
+</script>
 </head>
+<body>
+  <label for='name'>Name: </label><br/>
+  <input type='text' name='name' id='name' />
+
+  <script type='text/javascript' src=http://code.jquery.com/jquery-1.11.0.min.js></script>
+
+  <script type='text/javascript'>
+
+//Using jQuery
+
+//This would replace an input field to blank or ''
+    $('#name').val().replace(//,'');
+
+//Will replace anything that is not a letter or number with a blank or '' on blur
+    $('#name').blur(function(){
+    var name = $(this).val().replace(/[^\w]+/g,'');
+    });
+
+
+//Using straightup Javascript
+
+  document.getElementById('name').onblur = doSomething;
+    alert(name);
+
+  function doSomething(){
+    var name = this.value.replace(/[^\w]+/g,'');
+    alert(name);
+  }
+
+//Test accepts a single parameter and returns boolean
+  var username = 'John Smit';
+  alert(/[A-Za-z_-]+/.test(username)); //returns true
+
+//Split accepts a single regular expression returns the new string
+  var str = 'this is my string';
+  alert(str.split(/\s/)[3]); // alerts 'string'
+
+//Replace allows you to replace a certain block of text
+  var someSTring = 'Hello, World';
+  soneString = soeString.replace(/World/, 'Universe');
+  alert(someString); //Hello Universe
+
+//Match will return an array containing each word found
+  var name = 'JeffreyWay';
+  alert(name.match(/e/); //alerts 'e'
+  </scrpt>
+</body>
 
 

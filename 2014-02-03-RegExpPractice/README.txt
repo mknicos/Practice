@@ -16,3 +16,13 @@ Chalenges:
 Match numbers, they could be -1.5 0.445 +2000 etc..
 
 ^(\-|\+)?(\d*\.?\d*)
+
+3.
+Match dates such as 2014-12-12
+
+^\d{2|4}\-\d{2|4}\-\d{2|4}
+
+4.
+Match items in between quotes
+
+("|')(\\?.)*?\1

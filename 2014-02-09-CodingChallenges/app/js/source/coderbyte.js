@@ -1,4 +1,4 @@
-/*exported arrayAddition, longestWord */
+/*exported meanMode, arrayAddition, longestWord */
 
 function longestWord(sen) {
   'use strict';
@@ -43,3 +43,39 @@ function arrayAddition(arr){
     //need to finish code here
   }
 }
+
+function meanMode(array){
+  'use strict';
+  var maxNum, most, last, mode;
+  var counter = 1;
+  var counter2 = 0;
+  array = array.sort();
+  for(var i = 0; i < array.length; i++;){
+    var num = array[i];
+    if(array[i] === last){
+      counter ++;
+    }
+    if(counter > most){
+      maxNum = array[i];
+      counter = 1;
+    }
+    last = array[i];
+  }
+  mode = maxNum;
+  var median;
+  if(array.length % 2 !== 0){
+    median = array[Math.ceiling(array.length/2)];
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

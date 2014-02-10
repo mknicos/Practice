@@ -1,4 +1,4 @@
-/*exported arrayAddition, longestWord */
+/*exported meanMode, arrayAddition, longestWord */
 
 function longestWord(sen) {
   'use strict';
@@ -42,4 +42,10 @@ function arrayAddition(arr){
   for(var k = 0; k < newArray.length; k ++){
     //need to finish code here
   }
+}
+
+function meanMode(array){
+  'use strict';
+
+  array = array.sort();
 }

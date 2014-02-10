@@ -46,25 +46,38 @@ function arrayAddition(arr){
 
 function meanMode(array){
   'use strict';
-  var maxNum, most, last, mode;
+//function will return 1 if mean and mode are equal, 0 if not
+
+  var maxNum, mode;
+  var last = array[0];
+  var most = 0;
   var counter = 1;
-  var counter2 = 0;
   array = array.sort();
-  for(var i = 0; i < array.length; i++;){
-    var num = array[i];
+//Find the mode of the array
+  for(var i = 1; i < array.length; i++){
     if(array[i] === last){
       counter ++;
     }
     if(counter > most){
       maxNum = array[i];
+      most = counter;
       counter = 1;
     }
     last = array[i];
   }
   mode = maxNum;
+  console.log(mode);
+//find the median of the array
   var median;
   if(array.length % 2 !== 0){
-    median = array[Math.ceiling(array.length/2)];
+    median = array[Math.ceil(array.length/2)];
+  }else{
+    median = (array[Math.ceil(array.length/2)] + array[Math.floor(array.length/2)]) / 2;
+  }
+  if(median === mode){
+    return 1;
+  }else{
+    return 0;
   }
 }
 
